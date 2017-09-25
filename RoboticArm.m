@@ -16,7 +16,8 @@ function RoboticArm
     rot = rotation(th0)* [ 1 0 0 ;0 1 0 ; 0 0 1]; % no rotation of the initial frame
     DrawAxis(0,0,0,rot) %initial configuration frame   
     pussEnd = false;
-   
+    
+    % ANIMATION FOR FORWARD KINEMATICS
     while (pussEnd ~= true)
            
            th2_2 = th2;
