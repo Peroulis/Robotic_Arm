@@ -1,7 +1,7 @@
 function RoboticArm
     % FINAL PLOT OF THE ROBOTIC ARM
 
-    th0 = 0 ; th1 = 0; th2 = 0; th3 = 0 ; % new angles
+    th0 = 0 ; th1 = pi()/10; th2 = 0; th3 = 0 ; % new angles
     th1_old = 0; th2_old = 0; th3_old = 0 ;% old angles
     
     pitch = 25; % for the animation pitch
