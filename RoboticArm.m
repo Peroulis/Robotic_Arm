@@ -1,13 +1,17 @@
 function RoboticArm
     % FINAL PLOT OF THE ROBOTIC ARM
 
-    th0 = 0 ; th1 = pi()/10; th2 = 0; th3 = 0 ; % new angles
+    th0 = 0 ; th1 = 0; th2 = 0; th3 = 0 ; % new angles
     th1_old = 0; th2_old = 0; th3_old = 0 ;% old angles
     
     pitch = 25; % for the animation pitch
     figure(2)
     clf(2,'reset')
     hold on
+% INITIAL ROBOTIC ARM - FIRST-SECOND LINK
+    line([0 3 0],[0 0 0],[0 0 0],'color','k','linewidth',5) % first link
+    line([2 5 5],[0 0 0],[0 0 0],'color','b','linewidth',5) % second link
+    grid
 % initial configuration frame
     rot = rotation(th0)* [ 1 0 0 ;0 1 0 ; 0 0 1]; % no rotation of the initial frame
     DrawAxis(0,0,0,rot) %initial configuration frame   
@@ -21,7 +25,7 @@ function RoboticArm
     %  move throught th1
            if th1-th1_old ~= 0
              for th1 = linspace(th1_old,th1,pitch);
-                       th2 = 0 ; th3 = 0;
+                       th2 = th2_old ; th3 = th3_old;
                        for_kin % call the forward kinematics function to calculate the homogeneous transformations
                        clc
                        turn = turn + 1
@@ -56,7 +60,7 @@ function RoboticArm
     %  move throught th2
            if th2-th2_old ~= 0
                 for th2 = linspace(th2_old,th2,pitch);
-                    th3 = 0;
+                    th3 = th3_old;
                     for_kin % call of the forward kinematics function to calculate the homogeneous transformations
                     clc
                     turn = turn + 1
@@ -119,8 +123,7 @@ function RoboticArm
                     hold off
                end
            end
-           %origin %#ok<*NOPRT>
-
+           
            prompt = 'Input th1 \n';
            th1_old = th1;
            th1 = input(prompt);           
