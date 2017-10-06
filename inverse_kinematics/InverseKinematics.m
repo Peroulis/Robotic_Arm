@@ -1,6 +1,9 @@
 function th = InverseKinematics
+    % Call for the inverse problem
+    % Initializes angles (0)
+    % Input when asked the final tip position
+    
     clc
-
     th1_old = 0; th2_old = 0; th3_old = 0 ;% old angles
     
     a = 3 ; b = 2;
