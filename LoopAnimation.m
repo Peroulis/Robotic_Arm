@@ -1,4 +1,10 @@
 function turn = LoopAnimation (th1,th2,th3,turn) %#ok<*INUSD
+
+% For the plot animation
+% Takes the angles of the links and the # of turn as input
+% returns the "turn"
+% Is called by function "RoboticArm"
+
     for_kin % call the forward kinematics function to calculate the homogeneous transformations
     clc
     turn = turn + 1
