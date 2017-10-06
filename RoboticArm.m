@@ -1,8 +1,10 @@
 function RoboticArm
     % FINAL PLOT OF THE ROBOTIC ARM
+    % Takes no input arguments
+    % Initialize angles
     
     th0 = 0 ; th1 = 0; th2 = 0; th3 = 0 ; % new angles
-    th1_old = 0; th2_old = 0; th3_old = 0 ;% old angles
+    th1_old = 0; th2_old = 0; th3_old = 0 ;% previous angles; zero for the first turn
     
     pitch = 25; % for the animation pitch
     figure(2)
@@ -45,7 +47,9 @@ function RoboticArm
                    turn = LoopAnimation(th1,th2,th3,turn);
                end
            end
-           %pussEnd = true;
+           
+    %pussEnd = true; % for later use
+    % next move_input angles by use
     
            prompt = 'Input th1 \n';
            th1_old = th1;
@@ -62,14 +66,3 @@ function RoboticArm
            
       end
 end
-
-
-
-
-
-
-
-
-
-
-
