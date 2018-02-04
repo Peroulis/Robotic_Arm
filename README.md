@@ -10,4 +10,4 @@ For the Forward Kinematics run RoboticArm
 For the Inverse Kinematics enter inverse_kinematics folder
 
 Run RoboticArm.m
-Input the final tip position. The final transformation is previed
+Input the final tip position. The final transformation is previewed
